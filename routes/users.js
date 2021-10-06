@@ -53,6 +53,8 @@ router.post('/register', function(req, res, next){
         salt: salt
     });
 
+    console.log(req.body);
+
     // Check if user still exist
     User.findOne({ username: req.body.username })
       .then((user) => {
