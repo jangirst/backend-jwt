@@ -3,6 +3,8 @@ const cors = require('cors');
 const path = require('path');
 const passport = require('passport');
 
+const port = process.env.PORT || 3000;
+
 /**
  * -------------- GENERAL SETUP ----------------
  */
@@ -45,4 +47,6 @@ app.use(require('./routes'));
  */
 
 // Server listens on http://localhost:3000
-app.listen(3000);
+app.listen(port, function () {
+  console.log("Server started on port " + port);
+});
